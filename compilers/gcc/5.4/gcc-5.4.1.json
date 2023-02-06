@@ -1,0 +1,44 @@
+{
+  "id": "compilers/arm/gcc",
+  "version": "5.4.1",
+  "description": "The GNU Arm Embedded Toolchain is a ready-to-use, open-source suite of tools for C, C++ and assembly programming.  The GNU Arm Embedded Toolchain targets the 32-bit Arm Cortex-A, Arm Cortex-M, and Arm Cortex-R processor families.  The GNU Arm Embedded Toolchain includes the GNU Compiler (GCC) and is available free of charge directly from Arm  for embedded software development on Windows, Linux, and Mac OS X operating systems.",
+  "summary": "GCC compiler for ARM CPUs.",
+  "contacts": {
+    "Garrett Serack": {
+      "email": "garretts@microsoft.com",
+      "role": "publisher"
+    }
+  },
+  "demands": {
+    "windows": {
+      "install": {
+        "unzip": "https://developer.arm.com/-/media/Files/downloads/gnu-rm/5_4-2016q3/gcc-arm-none-eabi-5_4-2016q3-20160926-win32-zip.zip?revision=972a0ff0-0a6b-41e4-9d18-482d729e67b2?product=GNU Arm Embedded Toolchain,ZIP,,Windows,5-2016-q3-update",
+        "sha256": "c6ad9c000460c3ee98c59552736f23c04510966ab29c53f963ba890d1ebd5905"
+      }
+    },
+    "linux": {
+      "warning": "Ensure libncurses5 is installed with your system package manager before running arm-none-eabi-gdb.",
+      "install": {
+        "untar": "https://developer.arm.com/-/media/Files/downloads/gnu-rm/5_4-2016q3/gcc-arm-none-eabi-5_4-2016q3-20160926-linux.tar.bz2?revision=111dee36-f88b-4672-8ac6-48cf41b4d375?product=GNU Arm Embedded Toolchain,32-bit,,Linux,5-2016-q3-update",
+        "sha256": "a397c49bdd0cf17a38a494cb691baf68b8dcffa4d4c06561ef3d71b2ab4c92a1",
+        "strip": 1
+      }
+    },
+    "osx": {
+      "install": {
+        "untar": "https://developer.arm.com/-/media/Files/downloads/gnu-rm/5_4-2016q3/gcc-arm-none-eabi-5_4-2016q3-20160926-mac.tar.bz2?revision=06ff216c-f946-4b4a-bea1-22a5e09502ca?product=GNU Arm Embedded Toolchain,64-bit,,Mac OS X,5-2016-q3-update",
+        "sha256": "5656cdec40f99d5c054a85bbc694276e1c4a1488cdacbbc448bc6acd3bbe070d",
+        "strip": 1
+      }
+    }
+  },
+  "exports": {
+    "paths": {
+      "PATH": [
+        "bin",
+        "arm-none-eabi/bin",
+        "lib/gcc/arm-none-eabi/5.4.1"
+      ]
+    }
+  }
+}

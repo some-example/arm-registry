@@ -1,0 +1,52 @@
+{
+  "id": "compilers/arm/gcc",
+  "version": "9.2.1",
+  "description": "The GNU Arm Embedded Toolchain is a ready-to-use, open-source suite of tools for C, C++ and assembly programming.  The GNU Arm Embedded Toolchain targets the 32-bit Arm Cortex-A, Arm Cortex-M, and Arm Cortex-R processor families.  The GNU Arm Embedded Toolchain includes the GNU Compiler (GCC) and is available free of charge directly from Arm  for embedded software development on Windows, Linux, and Mac OS X operating systems.",
+  "summary": "GCC compiler for ARM CPUs.",
+  "contacts": {
+    "Garrett Serack": {
+      "email": "garretts@microsoft.com",
+      "role": "publisher"
+    }
+  },
+  "demands": {
+    "windows": {
+      "install": {
+        "unzip": "https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major-win32.zip?revision=20c5df9c-9870-47e2-b994-2a652fb99075&amp;hash=751ADF19E9F79D2D6577123BAB911D053096B20E",
+        "sha256": "e4c964add8d0fdcc6b14f323e277a0946456082a84a1cc560da265b357762b62"
+      }
+    },
+    "linux and (not arm64) and (not arm)": {
+      "warning": "Ensure libncurses5 is installed with your system package manager before running arm-none-eabi-gdb.",
+      "install": {
+        "untar": "https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux.tar.bz2?revision=108bd959-44bd-4619-9c19-26187abf5225&amp;hash=46AF221F493505D04113CD7FD10F378688940FC8",
+        "sha256": "bcd840f839d5bf49279638e9f67890b2ef3a7c9c7a9b25271e83ec4ff41d177a",
+        "strip": 1
+      }
+    },
+    "linux and arm64": {
+      "warning": "Ensure libncurses5 is installed with your system package manager before running arm-none-eabi-gdb.",
+      "install": {
+        "untar": "https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major-aarch64-linux.tar.bz2?revision=4583ce78-e7e7-459a-ad9f-bff8e94839f1&amp;hash=EE4BA674F815B508E1986A0B6790E4B329DCF1DC",
+        "sha256": "1f5b9309006737950b2218250e6bb392e2d68d4f1a764fe66be96e2a78888d83",
+        "strip": 1
+      }
+    },
+    "osx": {
+      "install": {
+        "untar": "https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major-mac.tar.bz2?revision=c2c4fe0e-c0b6-4162-97e6-7707e12f2b6e&amp;hash=FC6D8A8CE476037A6A075117E41EB2E1C9020B7F",
+        "sha256": "1249f860d4155d9c3ba8f30c19e7a88c5047923cea17e0d08e633f12408f01f0",
+        "strip": 1
+      }
+    }
+  },
+  "exports": {
+    "paths": {
+      "PATH": [
+        "bin",
+        "arm-none-eabi/bin",
+        "lib/gcc/arm-none-eabi/9.2.1"
+      ]
+    }
+  }
+}

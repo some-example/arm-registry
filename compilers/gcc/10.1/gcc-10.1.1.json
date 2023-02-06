@@ -1,0 +1,52 @@
+{
+  "id": "compilers/arm/gcc",
+  "version": "10.1.1",
+  "description": "The GNU Arm Embedded Toolchain is a ready-to-use, open-source suite of tools for C, C++ and assembly programming.  The GNU Arm Embedded Toolchain targets the 32-bit Arm Cortex-A, Arm Cortex-M, and Arm Cortex-R processor families.  The GNU Arm Embedded Toolchain includes the GNU Compiler (GCC) and is available free of charge directly from Arm  for embedded software development on Windows, Linux, and Mac OS X operating systems.",
+  "summary": "GCC compiler for ARM CPUs.",
+  "contacts": {
+    "Garrett Serack": {
+      "email": "garretts@microsoft.com",
+      "role": "publisher"
+    }
+  },
+  "demands": {
+    "windows": {
+      "install": {
+        "unzip": "https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q2/gcc-arm-none-eabi-10-2020-q2-preview-win32.zip?revision=5832f623-e444-44e2-b9e9-865b2e373f42&amp;hash=99259C89FFBCB225E081B9E9F8095D2248E01D4E",
+        "sha256": "61834cc61e13c96531ea468189739256d1613015938ecbd9c6f09ed8df9e8159"
+      }
+    },
+    "linux and (not arm64) and (not arm)": {
+      "warning": "Ensure libncurses5 is installed with your system package manager before running arm-none-eabi-gdb.",
+      "install": {
+        "untar": "https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q2/gcc-arm-none-eabi-10-2020-q2-preview-x86_64-linux.tar.bz2?revision=d78e0fa5-cb1e-47d6-84ce-88f3139deee9&amp;hash=9FA7B58CA538BE61178E11BC0C294667F0AC3A66",
+        "sha256": "300a8e782fa7a2c93bed8fde9cf42054edc06a98afba4bdf8046ccd6d1304299",
+        "strip": 1
+      }
+    },
+    "linux and arm64": {
+      "warning": "Ensure libncurses5 is installed with your system package manager before running arm-none-eabi-gdb.",
+      "install": {
+        "untar": "https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q2/gcc-arm-none-eabi-10-2020-q2-preview-aarch64-linux.tar.bz2?revision=a7134e5c-fad8-490c-a62b-9200acca15ef&amp;hash=66891CF5DCBF517C8A6CD8B58B88221C95928302",
+        "sha256": "526213c23f81bd60a7d4e546a77911cbf0ee28c4080185780d941d81d8fb02ee",
+        "strip": 1
+      }
+    },
+    "osx": {
+      "install": {
+        "untar": "https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q2/gcc-arm-none-eabi-10-2020-q2-preview-mac.tar.bz2?revision=216e5a91-fc06-44e0-901f-337a2a942316&amp;hash=D45564FF42E6F17ED4AC5B49F301445ED28E7B90",
+        "sha256": "bdf45397a01f7184d2fec71e8c3efe2bb435fc5399d3cf1d682ca52fd5e33c75",
+        "strip": 1
+      }
+    }
+  },
+  "exports": {
+    "paths": {
+      "PATH": [
+        "bin",
+        "arm-none-eabi/bin",
+        "lib/gcc/arm-none-eabi/10.1.1"
+      ]
+    }
+  }
+}

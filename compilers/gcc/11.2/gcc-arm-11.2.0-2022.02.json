@@ -1,0 +1,24 @@
+{
+  "id": "compilers/arm/gcc",
+  "version": "11.2.0",
+  "description": "The GNU Arm Embedded Toolchain is a ready-to-use, open-source suite of tools for C, C++ and assembly programming.  The GNU Arm Embedded Toolchain targets the 32-bit and 64-bit Arm Cortex-A, Arm Cortex-M, and Arm Cortex-R processor families.  The GNU Arm Embedded Toolchain includes the GNU Compiler (GCC) and is available free of charge directly from Arm  for embedded software development on Windows, Linux, and Mac OS X operating systems.",
+  "summary": "GCC compiler for ARM CPUs.",
+  "contacts": {
+    "Garrett Serack": {
+      "email": "garretts@microsoft.com",
+      "role": "publisher"
+    }
+  },
+  "demands": {
+    "not target, target:aarch32, target:arm32, target:arm": {
+      "requires": {
+        "compilers/arm/gcc-aarch32": "11.2.0"
+      }
+    },
+    "target:arm64, target:aarch64": {
+      "requires": {
+        "compilers/arm/gcc-aarch64": "11.2.0"
+      }
+    }
+  }
+}
